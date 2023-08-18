@@ -40,3 +40,28 @@
 .read-the-docs {
   color: #888;
 }
+
+
+.div-data-container{
+  width: 100%;
+  height: 100%;
+  display: flex;
+
+}
+
+.div-data-container > div{
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ccc;
+  margin-right: 2rem;
+  margin-top: 3rem;
+}
+
+.div-data p{
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}

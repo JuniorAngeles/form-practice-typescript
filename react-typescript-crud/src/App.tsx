@@ -16,7 +16,7 @@ function App() {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     const formData = new FormData(e.currentTarget)
-    console.log(e.currentTarget)
+    
     const newData: Formdata = {
       name: formData.get('name') as string,
       email: formData.get('email') as string,
@@ -28,8 +28,9 @@ function App() {
 
 useEffect(() => {
   data.map((item) => {
-    console.log(item)
-  })}), [data]
+    return item
+  })}),[data]
+
   return (
     <>
 <form onSubmit={handleSubmit}>
@@ -43,6 +44,19 @@ useEffect(() => {
   <input type="submit" value="enviar" />
 </form>
        
+<div className="div-data-container">
+  {data.map((item) => {
+    return(
+      <div className="div-data">
+        <p className="nameclass">{item.name}</p>
+        <p className='emailclass'>{item.email}</p>
+        <p className='passwordclass'>{item.password}</p>
+      </div>
+    )
+  })}
+  
+    </div>
+     
     </>
   )
 }
